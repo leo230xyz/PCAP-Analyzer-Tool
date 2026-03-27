@@ -1,65 +1,78 @@
-🛡️ Network Analyzer Pro
-A powerful, desktop-based Python application designed for rapid Network Forensics, Deep Packet Inspection (DPI), and Security Auditing. Built with Scapy and Tkinter, this tool provides a specialized interface for security analysts to move beyond basic headers and into the payload of network traffic.
+# 🛡️ Network Analyzer Tool
 
-🚀 Key Features
-Core Analysis
-PCAP/PCAPNG Loading: Seamlessly browse and ingest capture files for analysis.
+**Network Analyzer Tool** is a robust, Python-based desktop application for rapid network forensics, deep packet inspection (DPI), and security auditing. Built with Scapy and Tkinter, it provides an intuitive interface for security analysts to probe beyond basic packet headers and analyze the payload of network traffic.
 
-Packet Summarization: Generate a high-level overview of all traffic in the capture.
+---
 
-Protocol & IP Filtering: Isolate specific traffic (TCP/UDP/ICMP) or track behavior for a single IP.
+## 🚀 Key Features
 
-DNS Query Extraction: (New) Automatically maps all domain names visited within the capture to identify potential C2 (Command & Control) or malicious site access.
+### Core Analysis
 
-Security & Forensics
-Deep Packet Inspection (DPI): (New) Search entire packet payloads for specific keywords, strings, or hex patterns.
+- **PCAP/PCAPNG Loading:** Easily load and browse capture files for in-depth analysis.
+- **Packet Summarization:** Automatically generate high-level summaries of all captured traffic.
+- **Protocol & IP Filtering:** Focus on specific protocols (TCP/UDP/ICMP) or drill down on activity for individual IP addresses.
+- **DNS Query Extraction (New):** Instantly reveal all visited domains, helping spot potential command-and-control (C2) or malicious activity.
 
-Sensitive Data Audit: (New) Scans unencrypted traffic for potential leaks of passwords, login credentials, and session cookies.
+### Security & Forensics
 
-Device Fingerprinting: (New) Identifies hardware and software on the network (OS, Browsers, Device Types) by extracting HTTP User-Agent strings.
+- **Deep Packet Inspection (New):** Search full packet payloads for custom keywords, strings, or hex patterns.
+- **Sensitive Data Audit (New):** Detect potential leaks of passwords, credentials, and session cookies in unencrypted traffic.
+- **Device Fingerprinting (New):** Identify operating systems, browsers, and device types by extracting HTTP User-Agent strings.
+- **Suspicious Port Detection:** Flag activity on risky ports (e.g., 21, 23, 3389, 4444) and highlight top active IPs.
 
-Suspicious Port Detection: Flags activity on high-risk ports (e.g., 21, 23, 3389, 4444) and ranks the most active involved IPs.
+---
 
-🛠️ Getting Started
-Prerequisites
-Python 3.10+
+## 🛠️ Getting Started
 
-Npcap (for Windows): Required by Scapy to read network files correctly. Download here.
+### Prerequisites
 
-Installation
-Clone the repository:
+- **Python 3.10+**
+- **Npcap** (for Windows): Required for Scapy to process capture files. [Download Npcap](https://nmap.org/npcap/)
 
-Bash
-git clone https://github.com/leo230xyz/PCAP-Analyzer-Tool.git
-cd PCAP-Analyzer-Tool
-Install dependencies:
+### Installation
 
-Bash
-pip install scapy
-Run the application:
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/leo230xyz/PCAP-Analyzer-Tool.git
+   cd PCAP-Analyzer-Tool
+   ```
 
-Bash
-python main.py
-📖 Usage
-The interface is divided into two primary logical zones:
+2. **Install Dependencies**
+   ```bash
+   pip install scapy
+   ```
 
-General Analysis: Use these for standard network mapping, DNS extraction, and IP tracking.
+3. **Run the Application**
+   ```bash
+   python main.py
+   ```
 
-Security & Forensics: Use these for deeper inspection, identifying connected devices, and searching for data leaks.
+---
 
-Inputs: For "Lookup IP," "Filter Protocol," or "Payload Search," enter your keyword/IP into the text box before clicking the tool button.
+## 📖 Usage
 
-Results: All analysis is logged in real-time. Open results.csv in the project directory to view your structured data for use in Excel or PowerBI.
+- The interface is organized into two main zones:
+  - **General Analysis:** Network mapping, DNS extraction, and IP tracking.
+  - **Security & Forensics:** Deep inspection, device identification, leak detection.
+- **Inputs:** For "Lookup IP," "Filter Protocol," or "Payload Search," enter your term or IP, then click the corresponding button.
+- **Results:** Realtime logs are saved to `results.csv` in the project folder—ready for use with Excel or Power BI.
 
-📊 Technical Details
-Backend: Scapy (Packet manipulation and Layer 7 parsing)
+---
 
-Frontend: Tkinter (Custom dark-themed, categorized Grid GUI)
+## 📊 Technical Details
 
-Storage: CSV-based logging with result appending and "Clear Results" maintenance.
+- **Backend:** Scapy (packet parsing and manipulation)
+- **Frontend:** Tkinter (custom dark-themed grid GUI)
+- **Storage:** CSV-based logging; use "Clear Results" to refresh logs as needed
 
-🤝 Contributing
-Contributions are welcome! If you have suggestions for new security filters or payload decryption methods, feel free to fork the repo and submit a pull request.
+---
 
-📜 License
-Distributed under the MIT License. See LICENSE for more information.
+## 🤝 Contributing
+
+Contributions are welcome! Suggest new security filters, payload parsers, or other features by forking the repo and submitting a pull request.
+
+---
+
+## 📜 License
+
+Distributed under the MIT License. See [LICENSE](LICENSE) for details.
