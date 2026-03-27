@@ -1,18 +1,24 @@
-Network Analyzer Tool
-A lightweight, desktop-based Python application designed for rapid PCAP (Packet Capture) analysis and security auditing. Built with Scapy and Tkinter, this tool allows network administrators and security enthusiasts to filter traffic, lookup specific IP behavior, and identify suspicious port activity through an intuitive GUI.
+🛡️ Network Analyzer Pro
+A powerful, desktop-based Python application designed for rapid Network Forensics, Deep Packet Inspection (DPI), and Security Auditing. Built with Scapy and Tkinter, this tool provides a specialized interface for security analysts to move beyond basic headers and into the payload of network traffic.
 
-🚀 Features
-PCAP/PCAPNG Loading: Easily browse and load capture files from your local system.
+🚀 Key Features
+Core Analysis
+PCAP/PCAPNG Loading: Seamlessly browse and ingest capture files for analysis.
 
-Packet Summarization: Generate a complete high-level overview of all traffic in the capture.
+Packet Summarization: Generate a high-level overview of all traffic in the capture.
 
-IP Address Lookup: Filter all traffic associated with a specific Source or Destination IP.
+Protocol & IP Filtering: Isolate specific traffic (TCP/UDP/ICMP) or track behavior for a single IP.
 
-Protocol Filtering: Quickly isolate TCP, UDP, or ICMP traffic for targeted analysis.
+DNS Query Extraction: (New) Automatically maps all domain names visited within the capture to identify potential C2 (Command & Control) or malicious site access.
 
-Suspicious Port Detection: Automatically identifies traffic on high-risk ports (e.g., 21, 22, 23, 3389, 4444) and ranks the most active involved IPs.
+Security & Forensics
+Deep Packet Inspection (DPI): (New) Search entire packet payloads for specific keywords, strings, or hex patterns.
 
-CSV Export: All analysis results are automatically saved to a structured results.csv for use in Excel, PowerBI, or other reporting tools.
+Sensitive Data Audit: (New) Scans unencrypted traffic for potential leaks of passwords, login credentials, and session cookies.
+
+Device Fingerprinting: (New) Identifies hardware and software on the network (OS, Browsers, Device Types) by extracting HTTP User-Agent strings.
+
+Suspicious Port Detection: Flags activity on high-risk ports (e.g., 21, 23, 3389, 4444) and ranks the most active involved IPs.
 
 🛠️ Getting Started
 Prerequisites
@@ -24,8 +30,8 @@ Installation
 Clone the repository:
 
 Bash
-git clone https://github.com/YOUR_USERNAME/Network-Analyzer-Tool.git
-cd Network-Analyzer-Tool
+git clone https://github.com/leo230xyz/PCAP-Analyzer-Tool.git
+cd PCAP-Analyzer-Tool
 Install dependencies:
 
 Bash
@@ -35,23 +41,25 @@ Run the application:
 Bash
 python main.py
 📖 Usage
-Browse File: Select your .pcap or .pcapng file.
+The interface is divided into two primary logical zones:
 
-Analysis: Choose from the available analysis buttons.
+General Analysis: Use these for standard network mapping, DNS extraction, and IP tracking.
 
-Inputs: For "Lookup IP" or "Filter Protocol," enter the relevant IP or protocol (tcp/udp) into the text box before clicking the button.
+Security & Forensics: Use these for deeper inspection, identifying connected devices, and searching for data leaks.
 
-Results: Check the console for real-time "Done!!" messages and open results.csv in the project directory for the full dataset.
+Inputs: For "Lookup IP," "Filter Protocol," or "Payload Search," enter your keyword/IP into the text box before clicking the tool button.
+
+Results: All analysis is logged in real-time. Open results.csv in the project directory to view your structured data for use in Excel or PowerBI.
 
 📊 Technical Details
-Backend: Scapy (Packet manipulation and parsing)
+Backend: Scapy (Packet manipulation and Layer 7 parsing)
 
-Frontend: Tkinter (Custom dark-themed GUI)
+Frontend: Tkinter (Custom dark-themed, categorized Grid GUI)
 
-Storage: CSV-based logging with result appending
+Storage: CSV-based logging with result appending and "Clear Results" maintenance.
 
 🤝 Contributing
-Contributions are welcome! If you have suggestions for new security filters or data visualizations, feel free to fork the repo and submit a pull request.
+Contributions are welcome! If you have suggestions for new security filters or payload decryption methods, feel free to fork the repo and submit a pull request.
 
 📜 License
 Distributed under the MIT License. See LICENSE for more information.
